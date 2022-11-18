@@ -14,10 +14,10 @@ namespace DotNetAssesment.Data
         {
         }
 
-        public DbSet<Owner> Owner { get; set; } = default!;
+        public DbSet<Owner> Owner { get; set; }
 
-        public DbSet<DotNetAssesment.Models.Vehicle> Vehicle { get; set; }
+        public DbSet<Vehicle> Vehicle { get; set; }
 
-        public DbSet<DotNetAssesment.Models.Claim> Claim { get; set; }
+        public DbSet<Claim> Claim { get; set; }
     }
 }

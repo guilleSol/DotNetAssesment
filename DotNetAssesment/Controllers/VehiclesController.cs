@@ -19,14 +19,14 @@ namespace DotNetAssesment.Controllers
             _context = context;
         }
 
-        // GET: Vehicles
+        //This one for the full list
         public async Task<IActionResult> Index()
         {
             var dotNetAssesmentContext = _context.Vehicle.Include(v => v.Owner);
             return View(await dotNetAssesmentContext.ToListAsync());
         }
 
-        // GET: Vehicles/Details/5
+        //The details of a single one 
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Vehicle == null)
@@ -45,16 +45,14 @@ namespace DotNetAssesment.Controllers
             return View(vehicle);
         }
 
-        // GET: Vehicles/Create
+        //This returns the view to the create form
         public IActionResult Create()
         {
             ViewData["OwnerID"] = new SelectList(_context.Owner, "ID", "ID");
             return View();
         }
 
-        // POST: Vehicles/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //Used when submiting the create form
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID,Brand,Vin,Color,Year,OwnerID")] Vehicle vehicle)
@@ -69,7 +67,7 @@ namespace DotNetAssesment.Controllers
             return View(vehicle);
         }
 
-        // GET: Vehicles/Edit/5
+        //Returns the edit form view
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Vehicle == null)
@@ -86,9 +84,7 @@ namespace DotNetAssesment.Controllers
             return View(vehicle);
         }
 
-        // POST: Vehicles/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //Called on submiting edit form
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ID,Brand,Vin,Color,Year,OwnerID")] Vehicle vehicle)
@@ -122,7 +118,7 @@ namespace DotNetAssesment.Controllers
             return View(vehicle);
         }
 
-        // GET: Vehicles/Delete/5
+        //Returns the delete view
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Vehicle == null)
@@ -141,7 +137,7 @@ namespace DotNetAssesment.Controllers
             return View(vehicle);
         }
 
-        // POST: Vehicles/Delete/5
+        //Called when submiting the delete
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

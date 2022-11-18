@@ -10,6 +10,9 @@
 
         public Owner()
         {
+            FirstName = "";
+            LastName = "";
+            DriverLicense = "";
             Vehicles = new List<Vehicle>();
         }
     }
