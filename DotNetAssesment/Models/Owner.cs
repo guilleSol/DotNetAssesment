@@ -6,5 +6,11 @@
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string DriverLicense { get; set; }
+        public List<Vehicle> Vehicles { get; set; }
+
+        public Owner()
+        {
+            Vehicles = new List<Vehicle>();
+        }
     }
 }

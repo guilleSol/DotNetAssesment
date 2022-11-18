@@ -9,6 +9,6 @@
         public int Year { get; set; }
         public int OwnerID { get; set; }
         public Owner Owner { get; set; }
-
+        public List<Claim> Claims { get; set; }
     }
 }
