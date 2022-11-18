@@ -1,8 +1,19 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+	ViewData["Title"] = "Home Page";
 }
 
+<style>
+
+	button {
+		padding:1%;
+		margin:8px;
+	}
+
+</style>
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+	<h1 style="padding-bottom:5%" class="display-4">Welcome</h1>
+	<a href="https://localhost:7147/Owners/"><button>Manage Owners</button></a>
+	<a href="https://localhost:7147/Vehicles/"><button>Manage Vehicles</button></a>
+	<a href="https://localhost:7147/Claims/"><button>Manage Claims</button></a>
 </div>
