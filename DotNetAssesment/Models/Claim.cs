@@ -7,7 +7,7 @@
         public string Status { get; set; }
         public DateTime Date { get; set; }
         public int VehicleID { get; set; }
-        public Vehicle Vehicle { get; set; }
+        public Vehicle? Vehicle { get; set; }
 
     }
 }

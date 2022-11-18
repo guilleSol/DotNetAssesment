@@ -1,4 +1,6 @@
-﻿namespace DotNetAssesment.Models
+﻿using System.Security.Claims;
+
+namespace DotNetAssesment.Models
 {
     public class Vehicle
     {
@@ -8,7 +10,12 @@
         public String Color { get; set; }
         public int Year { get; set; }
         public int OwnerID { get; set; }
-        public Owner Owner { get; set; }
+        public Owner? Owner { get; set; }
         public List<Claim> Claims { get; set; }
+
+        public Vehicle()
+        {
+            Claims = new List<Claim>();
+        }
     }
 }
